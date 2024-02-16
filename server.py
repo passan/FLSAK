@@ -5,11 +5,17 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "rendom : <strong>" + str(random.random()) + "</strong>"
+    return "hello"
+    # return "rendom : <strong>" + str(random.random()) + "</strong>"
 
+@app.route('/create/')
+def create():
+    return "Create"
 
-
-
+@app.route('/read/<id>/')
+def read(id):
+    print(id)
+    return "read1"
 
 # 실제 서버에서는 삭제 port=5001, debug=True
 app.run(port=5001, debug=True)
